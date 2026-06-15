@@ -4,3 +4,7 @@ p{
     text-indent: 70px;
     letter-spacing: 2px;
 }
+
+body{
+    background-color: bisque;
+}
