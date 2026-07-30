@@ -4,4 +4,6 @@ body{
 h1{
     color: #56220f;
 }
- .imagem1{}
+ .imagem1{
+    width:30%;
+}
