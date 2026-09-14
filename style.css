@@ -1,12 +1,15 @@
-body{
-    background-color: rgb(234, 135, 99);
+body {
+    background-color: rgb(167, 95, 51);
 }
-h1{
-    color: #56220f;
-}
- .imagem1{
-    width:30%;
-}
-.imagem3{
-    width:35%;
-}
+ imagem1{ 
+    width: 35%;
+ }
+
+ imagem2{ 
+    width: 35%
+ }
+
+ imagem3{ 
+    width:35%  ;
+ }
+
