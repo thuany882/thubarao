@@ -1,19 +1,19 @@
 body {
     background-color: rgb(180, 95, 92);
 }
- imagem1{ 
+ .img1{ 
     width: 35%;
  }
 
- imagem2{ 
-    width: 35%
+.img2{ 
+    width: 35%;
  }
 
- imagem3{ 
-    width:20%  ;
+.img3{ 
+    width:20%;
  }
 
  h1 { 
-    color:rgb(87, 54, 10)
+    color:rgb(87, 54, 10);
  }
 
