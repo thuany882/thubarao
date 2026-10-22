@@ -1,39 +1,478 @@
-body {
-    background-color: rgba(246, 125, 121, 0.77);
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --fundo: #101710;
+    --fundo-claro: #18231a;
+    --cartao: #f0e2c9;
+    --texto: #24251e;
+    --texto-claro: #f5ead8;
+    --dourado: #d8b17a;
+    --borda: rgba(216, 177, 122, 0.34);
 }
- .img1{ 
-    width: 35%;
- }
 
-.img2{ 
-    width: 35%;
- }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-.img3{ 
-    width:400px;
-    height: 350;
- }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
 
- h1 { 
-    color:rgb(87, 54, 10);
+body {
+    background: var(--fundo);
+    color: var(--texto-claro);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+}
+
+/* MENU SUPERIOR */
+
+.topo {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 15px 6%;
+    background: rgba(13, 18, 13, 0.96);
+    border-bottom: 1px solid var(--borda);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--texto-claro);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+}
+
+.menu a {
+    position: relative;
+    padding: 8px 0;
+    color: #e6ddce;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover {
+    color: var(--dourado);
+}
+
+.menu a::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var(--dourado);
+    content: '';
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+}
+
+/* CAPA */
+
+.hero {
+    min-height: 490px;
+    display: flex;
+    align-items: center;
+    padding: 70px 9%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 14, 10, 0.15),
+            rgba(10, 14, 10, 0.2) 35%,
+            rgba(10, 14, 10, 0.85) 100%
+        ),
+        url('images.jpeg') center 42% / cover no-repeat;
+    border-bottom: 1px solid var(--borda);
+}
+
+.hero-conteudo {
+    width: min(550px, 100%);
+    margin-left: auto;
+}
+
+.etiqueta {
+    color: var(--dourado);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 8px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.8rem, 9vw, 7rem);
+    line-height: 1.05;
+}
+
+.frase-hero {
+    max-width: 380px;
+    color: #f2dfc4;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
     font-style: italic;
- 
-   }
-   h2{
-     font-style: italic;
-     color:rgb(87, 54, 10);
-   }
+}
 
-   h3{  
-      font-style: italic;
-      color:rgb(87, 54, 10);
-   
-   }
+/* SEÇÕES */
 
+.secao {
+    padding: 76px 7%;
+}
 
+.secao-escura {
+    background: var(--fundo-claro);
+    border-top: 1px solid rgba(216, 177, 122, 0.12);
+    border-bottom: 1px solid rgba(216, 177, 122, 0.12);
+}
 
- .lista{
-     text-decoration: overline;
-     color:rgb(63, 26, 26)
+.introducao {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.9fr) minmax(300px, 1.1fr);
+    align-items: center;
+    gap: clamp(28px, 5vw, 65px);
+}
 
- }
+.imagem-intro img {
+    min-height: 360px;
+    max-height: 500px;
+    border: 1px solid var(--borda);
+    border-radius: 22px;
+}
+
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.25;
+}
+
+.texto-intro h2,
+.introducao h2 {
+    margin: 8px 0 16px;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.introducao p + p {
+    margin-top: 14px;
+}
+
+.cabecalho-secao {
+    max-width: 760px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.cabecalho-secao h2 {
+    margin: 8px 0 16px;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.cabecalho-secao > p:last-child {
+    color: #d2c8b8;
+}
+
+/* CARTÕES */
+
+.grade {
+    display: grid;
+    gap: 22px;
+}
+
+.cartao {
+    overflow: hidden;
+    color: var(--texto);
+    background: var(--cartao);
+    border: 1px solid rgba(216, 177, 122, 0.5);
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.cartao-conteudo {
+    padding: 20px;
+}
+
+.cartao h3 {
+    margin-bottom: 10px;
+    font-size: 1.28rem;
+}
+
+.cartao p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* MITOS E LENDAS */
+
+.grade-mitos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cartao-mito {
+    padding: 27px;
+}
+
+.numero-mito {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 12px;
+    color: #f8edda;
+    background: #26372a;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* ANIMAÇÕES */
+
+.grade-animacoes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grade-animacoes .cartao > img {
+    height: 190px;
+}
+
+.cartao-ilustracao {
+    min-height: 190px;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    color: var(--dourado);
+    background: linear-gradient(135deg, #101710, #354332);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+/* COIOTE VS LOBO */
+
+.grade-comparacao {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grade-comparacao img {
+    height: 260px;
+}
+
+/* CARROSSEL DE ESPÉCIES */
+
+.carrossel {
+    display: grid;
+    grid-auto-columns: minmax(260px, 31%);
+    grid-auto-flow: column;
+    gap: 22px;
+    overflow-x: auto;
+    padding: 8px 4px 22px;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    scrollbar-color: var(--dourado) #263126;
+    scrollbar-width: thin;
+}
+
+.cartao-especie {
+    scroll-snap-align: start;
+}
+
+.cartao-especie img {
+    height: 220px;
+}
+
+.cartao-especie .cartao-conteudo {
+    padding: 18px;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    padding: 55px 7%;
+    background:
+        linear-gradient(
+            rgba(12, 17, 12, 0.78),
+            rgba(12, 17, 12, 0.9)
+        ),
+        url('Coyote-Vs-Wolf-differences.jpg') center / cover no-repeat;
+    text-align: center;
+}
+
+.rodape p {
+    max-width: 700px;
+    margin: 0 auto 18px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    font-style: italic;
+}
+
+.rodape a {
+    display: inline-block;
+    padding: 10px 17px;
+    border: 1px solid var(--dourado);
+    border-radius: 999px;
+    color: var(--texto-claro);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.rodape a:hover {
+    color: var(--fundo);
+    background: var(--dourado);
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+    .topo {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        gap: 4px 18px;
+    }
+
+    .hero {
+        min-height: 400px;
+        background-position: 38% center;
+    }
+
+    .hero-conteudo {
+        max-width: 440px;
+    }
+
+    .introducao {
+        grid-template-columns: 1fr;
+    }
+
+    .imagem-intro img {
+        min-height: 280px;
+        max-height: 390px;
+    }
+
+    .grade-animacoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .carrossel {
+        grid-auto-columns: minmax(250px, 45%);
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    html {
+        scroll-padding-top: 145px;
+    }
+
+    .topo {
+        padding: 12px 5%;
+    }
+
+    .menu {
+        gap: 3px 14px;
+    }
+
+    .menu a {
+        font-size: 0.78rem;
+    }
+
+    .hero {
+        min-height: 370px;
+        padding: 45px 7%;
+        background-position: 35% center;
+    }
+
+    .hero-conteudo {
+        padding: 18px;
+        background: rgba(10, 14, 10, 0.48);
+        border-radius: 16px;
+    }
+
+    .secao {
+        padding: 52px 5%;
+    }
+
+    .grade-mitos,
+    .grade-animacoes,
+    .grade-comparacao {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-mito {
+        padding: 22px;
+    }
+
+    .grade-animacoes .cartao > img,
+    .cartao-ilustracao {
+        height: 180px;
+        min-height: 180px;
+    }
+
+    .grade-comparacao img {
+        height: 220px;
+    }
+
+    .carrossel {
+        grid-auto-columns: 82%;
+        gap: 16px;
+    }
+
+    .cartao-especie img {
+        height: 205px;
+    }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
